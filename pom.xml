@@ -8,7 +8,7 @@
 	<artifactId>flowable-root</artifactId>
 
 	<packaging>pom</packaging>
-	<version>6.7.2.40</version>
+	<version>6.7.2.40-dm-SNAPSHOT</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<distributionManagementSnapshotsUrl>https://oss.sonatype.org/content/repositories/snapshots/</distributionManagementSnapshotsUrl>
@@ -995,7 +995,7 @@
 			<dependency>
 				<groupId>org.liquibase</groupId>
 				<artifactId>liquibase-core</artifactId>
-				<version>4.9.0</version>
+				<version>4.9.0-dm-SNAPSHOT</version>
 				<exclusions>
 					<exclusion>
 						<groupId>javax.xml.bind</groupId>
@@ -1184,7 +1184,7 @@
 		<module>modules/flowable-app-engine-api</module>
 		<module>modules/flowable-app-engine</module>
 		<module>modules/flowable-spring-security</module>
-        <module>modules/flowable-http-common</module>
+		<module>modules/flowable-http-common</module>
     </modules>
 
 	<build>
@@ -1485,34 +1485,34 @@
 							</execution>
 						</executions>
 					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-javadoc-plugin</artifactId>
-						<configuration>
-                            <doclint>none</doclint>
-                        </configuration>
-						<executions>
-							<execution>
-								<id>attach-javadocs</id>
-								<goals>
-									<goal>jar</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
+					<!--<plugin>-->
+					<!--	<groupId>org.apache.maven.plugins</groupId>-->
+					<!--	<artifactId>maven-javadoc-plugin</artifactId>-->
+					<!--	<configuration>-->
+                    <!--        <doclint>none</doclint>-->
+                    <!--    </configuration>-->
+					<!--	<executions>-->
+					<!--		<execution>-->
+					<!--			<id>attach-javadocs</id>-->
+					<!--			<goals>-->
+					<!--				<goal>jar</goal>-->
+					<!--			</goals>-->
+					<!--		</execution>-->
+					<!--	</executions>-->
+					<!--</plugin>-->
+					<!--<plugin>-->
+					<!--	<groupId>org.apache.maven.plugins</groupId>-->
+					<!--	<artifactId>maven-gpg-plugin</artifactId>-->
+					<!--	<executions>-->
+					<!--		<execution>-->
+					<!--			<id>sign-artifacts</id>-->
+					<!--			<phase>verify</phase>-->
+					<!--			<goals>-->
+					<!--				<goal>sign</goal>-->
+					<!--			</goals>-->
+					<!--		</execution>-->
+					<!--	</executions>-->
+					<!--</plugin>-->
 				</plugins>
 			</build>
 		</profile>
@@ -2067,15 +2067,22 @@
 		<developerConnection>scm:git:git@github.com:flowable/flowable-engine.git</developerConnection>
 	</scm>
 	<distributionManagement>
-		<snapshotRepository>
-			<id>sonatype-nexus-snapshots</id>
-			<name>Sonatype Nexus Snapshots</name>
-			<url>${distributionManagementSnapshotsUrl}</url>
-		</snapshotRepository>
 		<repository>
-			<id>sonatype-nexus-staging</id>
-			<name>Nexus Release Repository</name>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			<id>snapshots</id>
+			<name>zongtuo-snapshots</name>
+			<url>https://ds.dongriyangguang.top:7898/repository/maven-snapshots/</url>
 		</repository>
 	</distributionManagement>
+	<!--<distributionManagement>-->
+	<!--	<snapshotRepository>-->
+	<!--		<id>sonatype-nexus-snapshots</id>-->
+	<!--		<name>Sonatype Nexus Snapshots</name>-->
+	<!--		<url>${distributionManagementSnapshotsUrl}</url>-->
+	<!--	</snapshotRepository>-->
+	<!--	<repository>-->
+	<!--		<id>sonatype-nexus-staging</id>-->
+	<!--		<name>Nexus Release Repository</name>-->
+	<!--		<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>-->
+	<!--	</repository>-->
+	<!--</distributionManagement>-->
 </project>
